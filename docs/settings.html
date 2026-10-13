@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>設定画面の使い方 - Kashiwazaki SEO HTML Cleaner マニュアル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">SEO HTML Cleaner</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="settings.html" class="active">設定画面の使い方</a></li>
+            <li><a href="test.html">HTMLクリーニング テスト</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>設定画面の使い方</h1>
+        <p class="lead">公開ページから何を取り除くか、どのページを対象外にするかを設定します。</p>
+
+        <p>設定画面には、<strong>コメント除去</strong>・<strong>空行除去</strong>・<strong>除外URL</strong>の3つの設定と、<strong>設定を保存</strong>ボタンがあります。画面の下部には、設定どおりに処理されるかを試せる<a href="test.html">HTMLクリーニング テスト</a>があります。</p>
+
+        <h2>3つの設定の関係</h2>
+        <figure class="infographic">
+            <img src="images/infographics/settings-features.png" alt="3つの設定の働き">
+            <figcaption>「コメント除去」「空行除去」で取り除き、「除外URL」で対象外を決めます</figcaption>
+        </figure>
+
+        <h2>画面の地図</h2>
+        <figure class="infographic">
+            <img src="images/screenshots/01-settings-overview.png" alt="設定画面の全体">
+            <figcaption>設定画面の全体</figcaption>
+        </figure>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:12%;">番号</th>
+                    <th style="width:30%;">項目</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>①</td><td>コメント除去</td><td>不要なHTMLコメントを除去するかを切り替えます。</td></tr>
+                <tr><td>②</td><td>空行除去</td><td>空行をまとめるかを切り替えます。</td></tr>
+                <tr><td>③</td><td>除外URL</td><td>クリーニングしないページを指定します。</td></tr>
+                <tr><td>④</td><td>設定を保存</td><td>設定を保存します。</td></tr>
+                <tr><td>⑤</td><td>HTMLクリーニング テスト</td><td>設定どおりに処理されるかを試せます（別ページで説明）。</td></tr>
+            </tbody>
+        </table>
+
+        <h2>① コメント除去</h2>
+        <p><strong>何をするものか:</strong> 公開ページのHTMLから、表示に使われないHTMLコメントを取り除くかどうかを切り替えます。</p>
+        <p><strong>いつ使うか:</strong> ソースに残った不要なコメント（テーマやプラグインが残した説明コメントなど）を消して、HTMLを軽く・読みやすくしたいときはONのままにします。コメントを残したい事情があるときはOFFにします。</p>
+        <p><strong>操作手順:</strong></p>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>「不要なHTMLコメントを除去する」のチェックを、ON（チェックあり）またはOFF（チェックなし）にします。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p>画面下部の「設定を保存」をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>公開ページを再読み込みして、ソースからコメントが消えていることを確認します。</p></div></div>
+        <table>
+            <thead>
+                <tr><th style="width:25%;">選択肢</th><th>結果</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>チェックあり（ON）</td><td>公開ページの不要なHTMLコメントを除去します。動作に必要な条件付きコメントは残します。</td></tr>
+                <tr><td>チェックなし（OFF）</td><td>コメントはそのまま残します。</td></tr>
+            </tbody>
+        </table>
+        <p><strong>既定値:</strong> ON（チェックあり）。</p>
+        <p class="description">画面の説明: 条件付きコメント（&lt;!--[if ...]&gt; ... &lt;![endif]--&gt;）は動作に必要な場合があるため保持します。</p>
+        <div class="callout callout-note">
+            <p><strong>条件付きコメントは残します。</strong> ONにしていても、条件付きコメントは保持されます。</p>
+        </div>
+
+        <h2>② 空行除去</h2>
+        <p><strong>何をするものか:</strong> 空白だけの行が続く「空行」を1つにまとめるかどうかを切り替えます。</p>
+        <p><strong>いつ使うか:</strong> ソースに空行が多く、見通しを良くしたいときにONにします。</p>
+        <p><strong>操作手順:</strong></p>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>「空行（空白のみの行の連続）を除去する」のチェックを、ONまたはOFFにします。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p>「設定を保存」をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>公開ページを再読み込みして確認します。</p></div></div>
+        <p class="description">画面の説明: 行内のインデントやタグ間の区切りの改行は保持し、空行のみをまとめます。</p>
+        <table>
+            <thead>
+                <tr><th style="width:25%;">選択肢</th><th>結果</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>チェックあり（ON）</td><td>空行を1つの改行にまとめます。行内のインデントや、タグの区切りとしての改行は残します。</td></tr>
+                <tr><td>チェックなし（OFF）</td><td>空行はそのまま残します。</td></tr>
+            </tbody>
+        </table>
+        <p><strong>既定値:</strong> ON（チェックあり）。</p>
+        <div class="callout callout-warning">
+            <p><strong>注意:</strong> <code>pre</code> タグの中は、空行も含めて一切変更しません。コード表示やスクリプトの中身が変わることはありません。</p>
+        </div>
+
+        <h2>③ 除外URL</h2>
+        <p><strong>何をするものか:</strong> クリーニングを行わないページのURLを指定します。ここに書いたURLでは、コメント除去も空行除去も行いません。</p>
+        <p><strong>いつ使うか:</strong> 特定のページだけ表示が変わってしまうときに、そのページを対象外にしたいとき。</p>
+        <p><strong>操作手順:</strong></p>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>「除外URL」の欄に、対象外にするURLを<strong>1行に1つ</strong>入力します。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p>「設定を保存」をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>そのページを開いて、クリーニングされていないことを確認します。</p></div></div>
+        <figure class="infographic">
+            <img src="images/screenshots/06-exclude-url.png" alt="除外URLの入力例">
+            <figcaption>除外URLは1行に1つ入力します</figcaption>
+        </figure>
+        <p class="description">画面の説明: 1行に1つ指定します。完全一致（例: /contact/）／末尾が「/」なら前方一致（例: /blog/ は配下すべて）／「*」でワイルドカード（例: /news/*）に対応します。完全なURLで指定した場合はパス部分で判定します。</p>
+        <p><strong>指定方法（4通り）:</strong></p>
+        <table>
+            <thead>
+                <tr><th style="width:25%;">指定方法</th><th style="width:30%;">書き方の例</th><th>意味</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>完全一致</td><td><code>/contact/</code></td><td>その URL だけを対象外にします（末尾のスラッシュの有無は同じものとして扱います）。</td></tr>
+                <tr><td>前方一致</td><td><code>/blog/</code></td><td>末尾を「/」にすると、その配下すべて（<code>/blog/</code>、<code>/blog/2026/</code> …）を対象外にします。</td></tr>
+                <tr><td>ワイルドカード</td><td><code>/news/*</code></td><td><code>*</code> の部分は任意の文字に一致します。</td></tr>
+                <tr><td>完全なURL</td><td><code>https://example.com/private/</code></td><td>完全なURLで書いた場合は、そのパス部分で判定します。</td></tr>
+            </tbody>
+        </table>
+        <p><strong>既定値:</strong> 空欄（除外するページなし）。</p>
+        <div class="callout callout-tip">
+            <p><strong>ホームページだけを除外したいとき:</strong> <code>/</code> と1行だけ書きます。これはトップページ（<code>/</code>）だけを対象外にし、配下のページには影響しません。</p>
+        </div>
+        <div class="callout callout-note">
+            <p><strong>確認方法:</strong> 除外できているかは、そのページを開いてソースを見るのが確実です。除外したページでは、コメントや空行がそのまま残っています。</p>
+        </div>
+
+        <h2>④ 設定を保存</h2>
+        <p><strong>何をするものか:</strong> ①〜③の内容を保存します。</p>
+        <p><strong>操作手順:</strong></p>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>「設定を保存」をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p>画面の上部に緑の通知<strong>「設定を保存しました。」</strong>が出れば保存完了です。</p></div></div>
+        <figure class="infographic">
+            <img src="images/screenshots/02-save-success.png" alt="保存成功の通知">
+            <figcaption>保存に成功すると「設定を保存しました。」と表示されます</figcaption>
+        </figure>
+        <div class="callout callout-warning">
+            <p><strong>注意:</strong> チェックを変えただけでは保存されません。必ず「設定を保存」をクリックしてください。保存しないまま移動すると、変更は元に戻ります。</p>
+        </div>
+
+        <h2>この画面で表示されるメッセージ</h2>
+        <table>
+            <thead>
+                <tr><th style="width:40%;">メッセージ</th><th>意味と対処</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>設定を保存しました。</td><td>設定の保存に成功しました。公開ページに反映されます。</td></tr>
+                <tr><td>セキュリティチェックに失敗しました。もう一度お試しください。</td><td>保存の操作が無効になっていました。ページを再読み込みして、もう一度「設定を保存」を押してください。</td></tr>
+            </tbody>
+        </table>
+
+        <h2>目的別の使い方の例</h2>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p><strong>まず全体を軽くしたい</strong> … 既定（両方ON）のまま「設定を保存」。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p><strong>コメントは残したい</strong> … 「コメント除去」をOFFにして保存。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p><strong>特定のページだけ除外したい</strong> … 「除外URL」にそのURLを1行追加して保存。</p></div></div>
+        <div class="step"><div class="step-number">4</div><div class="step-content"><p><strong>処理結果を先に見たい</strong> … <a href="test.html">HTMLクリーニング テスト</a>を使います。</p></div></div>
+
+        <nav class="page-nav">
+            <a href="setup.html" class="prev">&laquo; インストール・初期設定</a>
+            <a href="test.html" class="next">HTMLクリーニング テスト &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO HTML Cleaner v1.0.0 | <a href="https://github.com/TsuyoshiKashiwazaki/wp-plugin-kashiwazaki-seo-html-cleaner" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+    <script src="js/manual.js"></script>
+</body>
+</html>

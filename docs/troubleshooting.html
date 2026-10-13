@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トラブルシューティング - Kashiwazaki SEO HTML Cleaner マニュアル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">SEO HTML Cleaner</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="settings.html">設定画面の使い方</a></li>
+            <li><a href="test.html">HTMLクリーニング テスト</a></li>
+            <li><a href="troubleshooting.html" class="active">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>トラブルシューティング</h1>
+        <p class="lead">「思ったとおりにならない」ときの、症状・原因・利用者にできる対処をまとめます。</p>
+
+        <h2>症状から探す</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:32%;">症状</th>
+                    <th style="width:30%;">考えられる原因</th>
+                    <th>利用者にできる対処</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>特定のページだけ表示が変わった</td>
+                    <td>そのページのHTMLに、クリーニングすると表示が変わる書き方がある</td>
+                    <td><a href="settings.html">除外URL</a>にそのページのURLを追加して保存します。そのページだけが対象外になります。</td>
+                </tr>
+                <tr>
+                    <td>表示が変わって困っている</td>
+                    <td>コメント除去・空行除去のどちらかが影響している</td>
+                    <td>片方をOFFにして保存し、どちらが原因かを切り分けます（例: 「空行除去」をOFFにする）。</td>
+                </tr>
+                <tr>
+                    <td>コメントが消えない</td>
+                    <td>「コメント除去」がOFF、またはそのページが除外URLになっている</td>
+                    <td>「コメント除去」をONにして保存します。除外URLにそのページがないかも確認します。</td>
+                </tr>
+                <tr>
+                    <td>空行が消えない</td>
+                    <td>「空行除去」がOFF、そのページが除外URL、またはキャッシュが残っている</td>
+                    <td>設定をONにして保存します。キャッシュ系のプラグインを使っている場合は、キャッシュを消して再読み込みします。</td>
+                </tr>
+                <tr>
+                    <td>設定したのに反映されない</td>
+                    <td>「設定を保存」を押していない、またはキャッシュが残っている</td>
+                    <td>もう一度「設定を保存」を押します（「設定を保存しました。」を確認）。それでも変わらなければキャッシュを消します。</td>
+                </tr>
+                <tr>
+                    <td>管理画面が変わっていないか心配</td>
+                    <td>仕様どおりの動作</td>
+                    <td>管理画面・REST API・フィード・サイトマップ・robots.txt は対象外です。クリーニングされるのは公開ページだけなので、管理画面が変わることはありません。</td>
+                </tr>
+                <tr>
+                    <td>テスト結果が入力をそのまま返す</td>
+                    <td>両方の設定がOFF、または除外URLに当てはまっている</td>
+                    <td>「コメント除去」「空行除去」のどちらかをONにして保存し、もう一度テストします。</td>
+                </tr>
+                <tr>
+                    <td>コード表示の中身が変わっていないか心配</td>
+                    <td>—</td>
+                    <td><code>pre</code> や <code>textarea</code>、スクリプト・スタイルの中身は一切変更しません。心配なときは<a href="test.html">HTMLクリーニング テスト</a>で確認できます。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>切り分けの手順</h2>
+        <figure class="infographic">
+            <img src="images/infographics/troubleshoot-flow.png" alt="問題の切り分けの流れ">
+            <figcaption>設定を1つずつ切り替えて、原因を切り分けます</figcaption>
+        </figure>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>まず<a href="settings.html">設定を保存</a>し直します。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p><a href="test.html">HTMLクリーニング テスト</a>で、そのページの一部を貼って結果を確認します。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>表示が変わる場合、「コメント除去」と「空行除去」を片方ずつOFFにして、どちらが原因かを確かめます。</p></div></div>
+        <div class="step"><div class="step-number">4</div><div class="step-content"><p>そのページだけを残したい場合は、<a href="settings.html">除外URL</a>に追加して保存します。</p></div></div>
+
+        <div class="callout callout-warning">
+            <p><strong>取り消したいとき:</strong> 設定はいつでも元に戻せます。チェックを元の状態にして「設定を保存」を押すと、公開ページは元のHTMLに戻ります（保存した内容がそのまま反映されます）。</p>
+        </div>
+
+        <div class="callout callout-note">
+            <p><strong>アンインストールすると:</strong> 保存した設定は消えます。公開ページは元どおりになります（クリーニングを行わなくなります）。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="test.html" class="prev">&laquo; HTMLクリーニング テスト</a>
+            <span></span>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO HTML Cleaner v1.0.0 | <a href="https://github.com/TsuyoshiKashiwazaki/wp-plugin-kashiwazaki-seo-html-cleaner" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+    <script src="js/manual.js"></script>
+</body>
+</html>

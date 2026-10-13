@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLクリーニング テスト - Kashiwazaki SEO HTML Cleaner マニュアル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">SEO HTML Cleaner</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="settings.html">設定画面の使い方</a></li>
+            <li><a href="test.html" class="active">HTMLクリーニング テスト</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>HTMLクリーニング テスト</h1>
+        <p class="lead">公開ページを触る前に、設定どおりに処理されるかを手元で確かめられます。</p>
+
+        <p>設定画面の下部にある「HTMLクリーニング テスト」は、<strong>保存済みの設定</strong>を使って、貼り付けたHTMLがどう処理されるかをその場で確認できる機能です。実際のページに影響を与えずに試せます。</p>
+
+        <h2>何ができるか</h2>
+        <figure class="infographic">
+            <img src="images/infographics/test-flow.png" alt="テストの流れ">
+            <figcaption>HTMLを貼る → テスト実行 → 結果を見る</figcaption>
+        </figure>
+        <p>たとえば「コメントは消えるか」「<code>pre</code> の中は本当に残るか」といった点を、実際のページで確認する前に試せます。</p>
+
+        <h2>使い方</h2>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>テストしたいHTMLを「<strong>テスト前のHTML</strong>」の欄に貼り付けます（最初からサンプルが入っています）。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p><strong>「テスト実行」</strong>をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>画面の下に「<strong>テスト結果（クリーニング後）</strong>」が表示されます。設定どおりに処理した結果がここに出ます。</p></div></div>
+        <figure class="infographic">
+            <img src="images/screenshots/03-test-result.png" alt="テスト実行とその結果">
+            <figcaption>「テスト実行」を押すと、下に「テスト結果（クリーニング後）」が出ます</figcaption>
+        </figure>
+
+        <h2>項目ごとの説明</h2>
+        <table>
+            <thead>
+                <tr><th style="width:30%;">項目</th><th>内容</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>テスト前のHTML</td><td>試したいHTMLを貼る欄です。あらかじめサンプルが入っています。自由に書き換えて構いません。</td></tr>
+                <tr><td>テスト実行</td><td>貼り付けたHTMLに、保存済みの設定を適用して結果を作ります。</td></tr>
+                <tr><td>テスト結果（クリーニング後）</td><td>処理した結果です。読み取り専用で、ここを編集しても保存はされません。「テスト実行」をするまでは表示されません。</td></tr>
+            </tbody>
+        </table>
+
+        <h3>結果の見方</h3>
+        <p>入力と結果を見比べます。コメント除去・空行除去がONなら、不要なコメントが消え、空行がまとまっているはずです。<code>pre</code> の中は、空行もコメントもそのまま残ります。</p>
+        <table>
+            <thead>
+                <tr><th style="width:35%;">入力</th><th>結果</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;div&gt;<br>　<br>&lt;!-- コメント --&gt;<br>　<br>&lt;p&gt;本文&lt;/p&gt;<br>&lt;/div&gt;</code></td>
+                    <td>不要なコメントが消え、空行がまとまります。</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;pre&gt; … &lt;/pre&gt;</code> の中</td>
+                    <td>中身は一切変更しません（コメントも空行もそのまま）。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-note">
+            <p><strong>テストは保存済みの設定を使います。</strong> さきほど設定を変えただけの場合、まだ保存されていません。先に「設定を保存」を押してからテストしてください。</p>
+        </div>
+
+        <div class="callout callout-tip">
+            <p><strong>おすすめ:</strong> 公開ページで表示が変わったと思ったら、そのページの一部をコピーしてここで試すと、原因（コメント除去か空行除去か）を切り分けやすくなります。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="settings.html" class="prev">&laquo; 設定画面の使い方</a>
+            <a href="troubleshooting.html" class="next">トラブルシューティング &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO HTML Cleaner v1.0.0 | <a href="https://github.com/TsuyoshiKashiwazaki/wp-plugin-kashiwazaki-seo-html-cleaner" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+    <script src="js/manual.js"></script>
+</body>
+</html>

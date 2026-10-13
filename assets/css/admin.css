@@ -1,0 +1,19 @@
+/**
+ * Kashiwazaki SEO HTML Cleaner - 管理画面スタイル
+ */
+
+.kashiwazaki-seo-html-cleaner-wrap .kashiwazaki-seo-html-cleaner-intro {
+    max-width: 820px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.kashiwazaki-seo-html-cleaner-wrap textarea.code {
+    font-family: Menlo, Consolas, monaco, monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.kashiwazaki-seo-html-cleaner-wrap h3 {
+    margin-top: 1.5em;
+}

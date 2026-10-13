@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インストール・初期設定 - Kashiwazaki SEO HTML Cleaner マニュアル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">SEO HTML Cleaner</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html" class="active">インストール・初期設定</a></li>
+            <li><a href="settings.html">設定画面の使い方</a></li>
+            <li><a href="test.html">HTMLクリーニング テスト</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>インストール・初期設定</h1>
+        <p class="lead">本プラグインをWordPressにインストールして有効化し、設定画面を開くまでの手順です。</p>
+
+        <h2>インストール手順</h2>
+        <div class="step"><div class="step-number">1</div><div class="step-content"><p>管理画面の左メニューから<strong>「プラグイン」→「プラグインを追加」</strong>を開きます。</p></div></div>
+        <div class="step"><div class="step-number">2</div><div class="step-content"><p>右上の<strong>「プラグインのアップロード」</strong>をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">3</div><div class="step-content"><p>プラグインのZIPファイルを選択して<strong>「今すぐインストール」</strong>をクリックします。</p></div></div>
+        <div class="step"><div class="step-number">4</div><div class="step-content"><p>インストールが終わったら<strong>「プラグインを有効化」</strong>をクリックします。</p></div></div>
+
+        <div class="callout callout-note">
+            <p>インストールしただけでは動きません。<strong>有効化</strong>まで行ってください。有効化すると、既定の設定（コメント除去 ON・空行除去 ON・除外URL なし）が用意されます。</p>
+        </div>
+
+        <h2>設定画面の開き方</h2>
+        <p>設定画面を開く方法は2つあります。どちらでも同じ画面が開きます。</p>
+
+        <h3>方法1: プラグイン一覧の「設定」リンク</h3>
+        <p>プラグイン一覧（左メニューの「プラグイン」）で、本プラグインの行に<strong>「設定」</strong>リンクが表示されます。クリックすると設定画面が開きます。</p>
+        <figure class="infographic">
+            <img src="images/screenshots/04-plugin-list-settings-link.png" alt="プラグイン一覧の設定リンク">
+            <figcaption>プラグイン一覧の「設定」リンクから開けます</figcaption>
+        </figure>
+
+        <h3>方法2: 左メニューの項目</h3>
+        <p>管理画面の左メニューに<strong>「Kashiwazaki SEO HTML Cleaner」</strong>が追加されます。クリックすると設定画面が開きます。</p>
+
+        <h2>初期設定の考え方</h2>
+        <figure class="infographic">
+            <img src="images/infographics/setup-steps.png" alt="インストールから設定までの流れ">
+            <figcaption>インストール → 有効化 → 設定画面を開く → 必要に応じて設定</figcaption>
+        </figure>
+        <p>有効化直後は、<strong>コメント除去と空行除去がどちらもON</strong>の状態です。このままでも、公開ページの不要なコメントと空行が取り除かれます。まずはこの状態で公開ページを確認し、表示に問題がないことを確かめてください。特定のページを対象外にしたい場合や、片方だけを使いたい場合は、<a href="settings.html">設定画面の使い方</a>を参照してください。</p>
+
+        <div class="callout callout-tip">
+            <p><strong>おすすめ:</strong> 設定を変えたら、<a href="test.html">HTMLクリーニング テスト</a>で処理結果を確認してから公開ページを確認すると安心です。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="index.html" class="prev">&laquo; 概要</a>
+            <a href="settings.html" class="next">設定画面の使い方 &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO HTML Cleaner v1.0.0 | <a href="https://github.com/TsuyoshiKashiwazaki/wp-plugin-kashiwazaki-seo-html-cleaner" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+    <script src="js/manual.js"></script>
+</body>
+</html>

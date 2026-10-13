@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概要 - Kashiwazaki SEO HTML Cleaner マニュアル</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">SEO HTML Cleaner</h2>
+            <span class="version">v1.0.0</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html" class="active">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="settings.html">設定画面の使い方</a></li>
+            <li><a href="test.html">HTMLクリーニング テスト</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Kashiwazaki SEO HTML Cleaner マニュアル</h1>
+        <img src="images/main-visual.png" alt="Kashiwazaki SEO HTML Cleaner メインビジュアル" style="width:100%;border-radius:8px;margin-bottom:24px;">
+
+        <p class="lead">公開ページのHTMLから、不要なHTMLコメントと空行を除去します。表示や動作に必要な空白・コメントと、コード表示やスクリプトの中身はそのまま残します。</p>
+
+        <p>WordPressでページを表示すると、テーマやプラグインが書き出したHTMLには、表示に使われないコメント（<code>&lt;!-- ... --&gt;</code>）や、空白だけの行がたくさん残ります。これらは画面には見えませんが、ソースコードを長く・読みにくくします。本プラグインは、公開ページを表示するときにこれらを取り除き、HTMLをすっきりさせます。取り除くかどうかは管理画面で切り替えられ、特定のページを除外することもできます。</p>
+
+        <h2>主な機能</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <h3>コメント除去</h3>
+                <p>公開ページの不要なHTMLコメントを除去します。動作に必要な条件付きコメントは残します。</p>
+            </div>
+            <div class="feature-card">
+                <h3>空行除去</h3>
+                <p>空白だけの行が続く「空行」をまとめます。行内のインデントや区切りの改行は残します。</p>
+            </div>
+            <div class="feature-card">
+                <h3>除外URL</h3>
+                <p>クリーニングを適用しないページを指定できます。完全一致・前方一致・ワイルドカードに対応。</p>
+            </div>
+        </div>
+
+        <h2>全体の流れ</h2>
+        <figure class="infographic">
+            <img src="images/infographics/overview.png" alt="公開ページのHTMLがクリーニングされる流れ">
+            <figcaption>公開ページを表示するときに、不要なコメントと空行を取り除きます</figcaption>
+        </figure>
+
+        <h2>できること</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:30%;">機能</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>不要なコメントを消す</td>
+                    <td>ソースに残った <code>&lt;!-- ... --&gt;</code> を除去します。動作に必要な条件付きコメント（<code>&lt;!--[if ...]&gt; ... &lt;![endif]--&gt;</code>）は残します。</td>
+                </tr>
+                <tr>
+                    <td>空行をまとめる</td>
+                    <td>空白だけの行が連続する「空行」を1つにまとめます。</td>
+                </tr>
+                <tr>
+                    <td>内容を守る</td>
+                    <td>コード表示やスクリプト、スタイルの中身（pre・textarea・script・style）は一切変更しません。</td>
+                </tr>
+                <tr>
+                    <td>ページを除外する</td>
+                    <td>特定のURLではクリーニングを行いません。1行に1つ指定します。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-note">
+            <p><strong>対象は公開ページだけです。</strong> 管理画面・REST API・フィード・サイトマップ・robots.txt・Ajax はクリーニングの対象外です。管理画面の表示が変わることはありません。</p>
+        </div>
+
+        <h2>設定画面の全体像</h2>
+        <figure class="infographic">
+            <img src="images/screenshots/01-settings-overview.png" alt="設定画面の全体">
+            <figcaption>設定画面（左メニューの「Kashiwazaki SEO HTML Cleaner」から開きます）</figcaption>
+        </figure>
+
+        <h2>目次</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">ページ</th>
+                    <th>内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="index.html">概要</a></td>
+                    <td>プラグインの機能概要と全体像</td>
+                </tr>
+                <tr>
+                    <td><a href="setup.html">インストール・初期設定</a></td>
+                    <td>インストール手順と、設定画面の開き方</td>
+                </tr>
+                <tr>
+                    <td><a href="settings.html">設定画面の使い方</a></td>
+                    <td>コメント除去・空行除去・除外URL・設定の保存</td>
+                </tr>
+                <tr>
+                    <td><a href="test.html">HTMLクリーニング テスト</a></td>
+                    <td>設定どおりに処理されるかを確認するテスト機能</td>
+                </tr>
+                <tr>
+                    <td><a href="troubleshooting.html">トラブルシューティング</a></td>
+                    <td>よくある問題と解決方法</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>動作要件</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">項目</th>
+                    <th>要件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WordPress</td>
+                    <td>6.0以上</td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td>7.4以上</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <nav class="page-nav">
+            <span></span>
+            <a href="setup.html" class="next">インストール・初期設定 &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO HTML Cleaner v1.0.0 | <a href="https://github.com/TsuyoshiKashiwazaki/wp-plugin-kashiwazaki-seo-html-cleaner" target="_blank" rel="noopener">GitHub</a></p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+    <script src="js/manual.js"></script>
+</body>
+</html>
